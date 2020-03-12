@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abf49022-3762-4eea-8586-2ca57124b437" name="Default Changelist" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/hydrant.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/fire-hydrant.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/YMap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/YMap.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hydrant.js" beforeDir="false" afterPath="$PROJECT_DIR$/hydrant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +38,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1Yz0jczIK7HFeg9XaEycqohZlSb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -64,6 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583930252451</updated>
       <workItem from="1583930256193" duration="2179000" />
+      <workItem from="1584047213305" duration="7412000" />
     </task>
     <servers />
   </component>
@@ -75,10 +81,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="245" y="27" width="865" height="741" key="CommitChangelistDialog2" timestamp="1583932348539">
+    <state x="245" y="27" width="865" height="741" key="CommitChangelistDialog2" timestamp="1584055122485">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="245" y="27" width="865" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1583932348539" />
+    <state x="245" y="27" width="865" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1584055122485" />
     <state x="536" y="291" key="Github.ShareDialog" timestamp="1583932492637">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -87,6 +93,14 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="447" y="54" width="461" height="685" key="Github.UntrackedFilesDialog/0.27.1366.741@0.27.1366.741" timestamp="1583932503981" />
+    <state x="478" y="322" width="399" height="149" key="NewPhpFileDialog" timestamp="1584049529137">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="478" y="322" width="399" height="149" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1584049529137" />
+    <state x="432" y="59" width="481" height="676" key="RollbackChangesDialog" timestamp="1583970165720">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="432" y="59" width="481" height="676" key="RollbackChangesDialog/0.27.1366.741@0.27.1366.741" timestamp="1583970165720" />
     <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1583930264358">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
