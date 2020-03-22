@@ -1,1 +1,4 @@
-[{"id":"0","name":"первый","point":"56.871331, 53.190844"},{"id":"1","name":"второй","point":"56.865983, 53.238309"},{"id":"2","name":"третий","point":"56.845194, 53.205779"},{"id":"3","name":"четвертый","point":"56.843927, 53.230670"}]
+{
+"type": "FeatureCollection",
+ "features":
+ [{"type":"Feature","id":0,"geometry":{"type":"Point","coordinates":[56.871331,53.190844]},"properties":{"balloonContentHeader":"первый"}},{"type":"Feature","id":1,"geometry":{"type":"Point","coordinates":[56.865983,53.238309]},"properties":{"balloonContentHeader":"второй"}},{"type":"Feature","id":2,"geometry":{"type":"Point","coordinates":[56.845194,53.205779]},"properties":{"balloonContentHeader":"третий"}},{"type":"Feature","id":3,"geometry":{"type":"Point","coordinates":[56.843927,53.23067]},"properties":{"balloonContentHeader":"четвертый"}}] }

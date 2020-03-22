@@ -26,10 +26,16 @@ else
 $ch = mysqli_query($dblink, "SELECT * FROM `objects`") or die(mysql_error());
 $list = array();
 while ($list = mysqli_fetch_assoc($ch)){
-    $id = $list['id'];
+    $id = json_decode($list['id']);
     $name = $list['name'];
-    $point = $list['point'];
-
-    $taskList[] = array('id' => $id, 'name' => $name, 'point' => $point);
-    file_put_contents('data.json', json_encode($taskList, JSON_UNESCAPED_UNICODE));
+    $longitude = json_decode($list['longitude']);
+    $latitude = json_decode($list['latitude']);
+    $point = array($longitude, $latitude);
+    $type1 = "Feature";
+    $type2 = "Point";
+    $properties = array('balloonContentHeader'=> $name);
+    $geometry = array('type' => $type2, 'coordinates' => $point);
+    $taskList[] = array('type' => $type1, 'id' => $id, 'geometry' => $geometry, 'properties' => $properties);
+    $data = json_encode($taskList, JSON_UNESCAPED_UNICODE);
+    file_put_contents('data.json',"{\n\"type\": \"FeatureCollection\",\n \"features\":\n $data }");
 }
