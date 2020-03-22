@@ -8,21 +8,28 @@ $server = 'localhost';
 $user = 'root';
 $password = '';
 $dblink = mysqli_connect($server, $user, $password);
+require_once("PHPDebug.php");
+$debug = new PHPDebug();
 
 if($dblink)
-    echo 'Соединение установлено.';
+    $debug -> debug("Соединение установлено");
 else
-    die('Ошибка подключения к серверу баз данных.');
+    $debug -> debug("Ошибка подключения к серверу баз данных");
 
 $database = 'mysql';
 $selected = mysqli_select_db($dblink, $database);
 if($selected)
-    echo ' Подключение к базе данных прошло успешно.<br>';
+    $debug -> debug("Подключение к базе данных прошло успешно");
 else
-    die(' База данных не найдена или отсутствует доступ.');
+    $debug -> debug("База данных не найдена или отсутствует доступ");
 
 $ch = mysqli_query($dblink, "SELECT * FROM `objects`") or die(mysql_error());
 $list = array();
 while ($list = mysqli_fetch_assoc($ch)){
-    echo 'id-'.$list['id'].'>Улица-'.$list['name'].'Координаты-'.$list['point'].'<br>';
+    $id = $list['id'];
+    $name = $list['name'];
+    $point = $list['point'];
+
+    $taskList[] = array('id' => $id, 'name' => $name, 'point' => $point);
+    file_put_contents('data.json', json_encode($taskList, JSON_UNESCAPED_UNICODE));
 }
