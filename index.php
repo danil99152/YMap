@@ -40,14 +40,14 @@ while ($list = mysqli_fetch_assoc($ch)){
     $photo = $list['photo'];
     $photo = "<img src=\"images/$photo\" width=\"150\" height=\"200\"><br>";
     $notation = $list['notation'];
-    $notation = "<b>Примечание:</b>$notation";
+    $notation = "<b>Примечание:</b> $notation";
     $longitude = json_decode($list['longitude']);
     $latitude = json_decode($list['latitude']);
     $type1 = "Feature";
     $type2 = "Point";
 
     $point = array($longitude, $latitude);
-    $balloonContentBody = array($type, $lastCheck, $power, $status, $photo, $notation);
+    $balloonContentBody = array("$type $lastCheck $power $status $photo $notation");
     $properties = array('balloonContentHeader' => $address, 'balloonContentBody'=> $balloonContentBody);
     $geometry = array('type' => $type2, 'coordinates' => $point);
     $taskList[] = array('type' => $type1, 'id' => $id, 'geometry' => $geometry, 'properties' => $properties);
