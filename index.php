@@ -23,17 +23,24 @@ if($selected)
 else
     $debug -> debug("База данных не найдена или отсутствует доступ");
 
-$ch = mysqli_query($dblink, "SELECT * FROM `objects`") or die(mysql_error());
+$ch = mysqli_query($dblink, "SELECT * FROM `hydrant`") or die(mysql_error());
 $list = array();
 while ($list = mysqli_fetch_assoc($ch)){
     $id = json_decode($list['id']);
-    $name = $list['name'];
+    $address = $list['address'];
+    $type = $list['type'];
+    $lastCheck = $list['lastCheck'];
+    $power = $list['power'];
+    $status = $list['status'];
+    $photo = $list['photo'];
+    $notation = $list['notation'];
     $longitude = json_decode($list['longitude']);
     $latitude = json_decode($list['latitude']);
     $point = array($longitude, $latitude);
     $type1 = "Feature";
     $type2 = "Point";
-    $properties = array('balloonContentHeader'=> $name);
+    $balloonContentBody = array($type, $lastCheck, $power, $status, $photo, $notation);
+    $properties = array('balloonContentHeader' => $address, 'balloonContentBody'=> $balloonContentBody);
     $geometry = array('type' => $type2, 'coordinates' => $point);
     $taskList[] = array('type' => $type1, 'id' => $id, 'geometry' => $geometry, 'properties' => $properties);
     $data = json_encode($taskList, JSON_UNESCAPED_UNICODE);
