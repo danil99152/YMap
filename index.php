@@ -36,13 +36,15 @@ while ($list = mysqli_fetch_assoc($ch)){
     $notation = $list['notation'];
     $longitude = json_decode($list['longitude']);
     $latitude = json_decode($list['latitude']);
-    $point = array($longitude, $latitude);
     $type1 = "Feature";
     $type2 = "Point";
+
+    $point = array($longitude, $latitude);
     $balloonContentBody = array($type, $lastCheck, $power, $status, $photo, $notation);
     $properties = array('balloonContentHeader' => $address, 'balloonContentBody'=> $balloonContentBody);
     $geometry = array('type' => $type2, 'coordinates' => $point);
     $taskList[] = array('type' => $type1, 'id' => $id, 'geometry' => $geometry, 'properties' => $properties);
+
     $data = json_encode($taskList, JSON_UNESCAPED_UNICODE);
     file_put_contents('data.json',"{\n\"type\": \"FeatureCollection\",\n \"features\":\n $data }");
 }
